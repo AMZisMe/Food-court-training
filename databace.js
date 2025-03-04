@@ -11,7 +11,7 @@ let popularFoodsArray = [
       name: "Special burger",
       type: "Burger",
       price: "100",
-      image: "images/burger.png",
+      image: "images/1 (6).png",
     },
     {
       favorited: false,
@@ -62,7 +62,7 @@ let popularFoodsArray = [
       name: "Super burger",
       type: "Burger",
       price: "100",
-      image: "images/burger.png",
+      image: "images/1 (6).png",
     },
   
     {
