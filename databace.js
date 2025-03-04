@@ -84,7 +84,7 @@ let popularFoodsArray = [
       name: "vegetrian sandwich",
       type: "Sandwich",
       price: "180",
-      image: "images/sandwich.png",
+      image: "images/1 (5).png",
     },
   ];
 
