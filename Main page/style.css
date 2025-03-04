@@ -1,0 +1,640 @@
+/* Basic Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-decoration: none;
+  color: #000;
+}
+body {
+  background-color: #f5f5f5;
+}
+:root {
+  --main-color: #9e090f;
+}
+
+/* Navbars Styles */
+
+/* Desktop Nav */
+.desktop-nav-container {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+.desktop-nav-container .open {
+  padding: 7px 8px;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: large;
+  position: fixed;
+  z-index: 2;
+  top: 30px;
+  left: 50px;
+  cursor: pointer;
+  transition: 1s;
+}
+.desktop-nav-container nav {
+  width: 300px;
+  height: 100vh;
+  border-radius: 0 30px 30px 0;
+  background-color: var(--main-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  padding: 3vw 0 3vw 3vw;
+  display: flex;
+  flex-direction: column;
+  transition: 1s;
+}
+.closed-navbar {
+  transform: translateX(-320px);
+}
+.opened-navbar {
+  transform: translateX(0);
+}
+.desktop-nav-container nav a {
+  color: #fff;
+  margin-top: clamp(10px, 3vw, 50px);
+  position: relative;
+  cursor: pointer;
+}
+.desktop-nav-container nav a::after {
+  content: "";
+  height: 1px;
+  width: 150px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+.desktop-nav-container nav a i {
+  color: #fff;
+  margin: 0 5px;
+}
+.desktop-nav-container nav .close {
+  padding: 7px;
+  border-radius: 15px;
+  color: var(--main-color);
+  background-color: #fff;
+  font-size: large;
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+/* Mobile Nav  */
+.mobile-navbar-container{
+    width: 100%;
+    position: fixed;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    z-index: 4;
+    display: none;
+    transition: 0.5s;
+
+}
+.mobile-navbar {
+  width: 90%;
+  padding: 30px;;
+  background-color: var(--main-color);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  border-radius: 50px;
+}
+.mobile-navbar a{
+    text-align: center;
+    cursor: pointer;
+}
+.mobile-navbar a i{
+    color: #fff;
+}
+    /* Responsiving Navbars */
+    @media (max-width:700px){
+.desktop-nav-container{
+    display: none;
+}
+.mobile-navbar-container{
+    display: flex;
+}        
+    }
+
+
+/* Header Styles */
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(15px,3vw,40px);
+}
+header .head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+}
+header .head .profile {
+  width: clamp(200px, 100%, 500px);
+  display: flex;
+  align-items: center;
+}
+header .head .profile img {
+  width: clamp(80px, 7vw, 80px);
+  height: clamp(80px, 7vw, 80px);
+  border-radius: 50px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid #000;
+}
+header .head .profile span {
+  color: var(--main-color);
+  margin-left: 15px;
+  position: relative;
+}
+header .head .profile span::before {
+  content: "user name:";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: #999999;
+  font-size: medium;
+  z-index: 1;
+  width: 200px;
+}
+header .head h1 {
+  width: clamp(250px, 40vw, 500px);
+  font-size: clamp(25px, 3vw, 50px);
+  text-align: center;
+  justify-self: center;
+}
+header .head h1 span:nth-child(2) {
+  color: var(--main-color);
+}
+header .head a {
+text-align: end;
+}
+header .head .login {
+  cursor: pointer;
+  color: var(--main-color);
+  justify-self: end;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: x-large;
+  padding: 5px;
+}
+header form{
+    width: 60%;
+    min-width: 350px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    margin: 3vw auto ;
+
+}
+header form i{
+    align-self: center;
+    font-size: larger;
+}
+header form input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: #414141;
+    margin-left: 10px;
+    font-size: large;
+    
+}
+header .food-types{
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: scroll;
+}
+header .food-types::-webkit-scrollbar{
+  height: 0;
+}
+header .food-types span{
+    padding: 10px 20px; 
+    background-color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .5s;
+    margin: 0px clamp(5px,0.5vw,8px);
+}
+header .food-types span:hover{
+    background-color: #d6d6d6;
+}
+.selected-filter{
+    background-color: var(--main-color)!important;
+    color: #fff;
+}
+/* Responsiving Header  */
+@media (max-width: 600px) {
+  header .head {
+    grid-template-columns: 1fr 1fr;
+  }
+  header .head h1 {
+    margin-top: 10px;
+    text-align: start;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-weight: 500;
+  }
+  header .head h1 span:nth-child(1) {
+    display: block;
+  }
+  header .food-types{
+    justify-content: flex-start;
+  }
+}
+/* Main parts */
+
+.popular-foods,.nearest-foods{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(10px,3vw,30px);
+}
+.popular-foods .title,.nearest-foods .title{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+.popular-foods .title #see-all,.nearest-foods .title #see-all{
+  cursor: pointer;
+  color: var(--main-color);
+}
+.food-cards{
+  min-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 2vw 0;
+}
+.food-cards::-webkit-scrollbar{
+  height: 0;
+}
+.food-cards .card{
+  width: clamp(150px,15vw,300px);
+  height: clamp(200px,20vw,400px);
+  background-color: #fff;
+  margin: clamp(10px,3vw,30px);
+  flex-shrink: 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding:15px;
+  cursor: pointer;
+}
+.food-cards .card .fa-heart{
+  color: var(--main-color);
+  width: 100%;
+  text-align: right;
+  
+}
+.food-cards .card img{
+  width: 100%;
+  height: 55%;
+  object-fit: contain;
+  object-position: center;
+  margin-bottom: 10px;
+}
+.food-cards .card .food-name{
+  font-size: large;
+  text-transform: capitalize;
+}
+.food-cards .card .food-type{
+  color: #414141;
+  font-size: small;
+  margin: 0.5vw 0 0.8vw 0;
+} 
+.food-cards .card .price{
+  justify-self: self-end;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.food-cards .card .price .fa-square-plus{
+  font-size: x-large;
+  color: var(--main-color); 
+}
+
+/* Footer styles */
+footer{
+  width: 100%;
+  min-height: 50vh;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr ;
+  background-color: var(--main-color);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vw;
+}
+footer ul{
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-self: center;
+  align-self: center;
+}
+footer ul a,footer ul p{
+  color: #e4e4e4;
+  transition: .5s;
+  align-content: center;
+}
+footer ul:nth-child(2) a:hover{
+  color: #fff;
+  
+}
+footer ul:nth-child(2) a:hover i,footer ul:nth-child(1) p:hover i{
+  animation: updown 1s ease-in infinite alternate-reverse ;
+}
+footer ul a i,footer ul p i{
+  margin-right: 5px;
+  color: inherit;
+  transition: .5s;
+}
+footer ul p{
+  max-width: 250px;
+}
+footer ul:nth-child(1) a:hover i{
+  animation: updown 1s ease-in infinite alternate-reverse ;
+}
+footer ul:nth-child(1) a:nth-child(1):hover i{
+  color: #0088cc;
+}
+footer ul:nth-child(1) a:nth-child(2):hover i{
+  color: #ff006a;
+}
+footer ul:nth-child(1) a:nth-child(3):hover i{
+  color: #1da1f2;
+}
+footer ul:nth-child(1) a:nth-child(4):hover i{
+  color: #1877f2;
+}
+@keyframes updown{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-5px);
+  }
+} 
+  /* Respinsiving Footer  */
+  @media (max-width:900px){
+    footer ul{
+      grid-template-columns: repeat(2,1fr);
+      /* grid-template-rows: repeat(2,1fr); */
+      text-align: center;
+    }
+  }
+
+
+/* Favorite foods section styles */
+
+.favorites h1 , .cartItems h1{
+  width: 100%;
+  padding: 2vw;
+  text-align: center;
+  text-transform: capitalize;
+}
+.favorites h1 span ,.cartItems h1 span{
+  color: var(--main-color);
+}
+
+/* Close Style  */
+.favorites .x-icon,.cartItems .x-icon{
+      padding: 9px 11px;
+      border-radius: 50px;
+      background-color: var(--main-color);
+      color: #fff;
+      position: fixed;
+      z-index: 2;
+      top: 3vw;
+      left: 5vw;
+      cursor: pointer;
+      transition: 1s;
+}
+.favorites .x-icon:hover ,.cartItems .x-icon:hover{
+  background-color: #d10007;
+}
+
+.favorites , .cartItems{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #f5f5f5;
+  display: none;
+  z-index: 5;
+}
+.favorites .all-favorite-foods , .cartItems #all-cart-items{
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,clamp(150px,15vw,300px));
+  /* gap: 1.5vw; */
+  justify-content: space-evenly;
+  margin: 1vw 0 2vw 0;
+}
+.favorites .all-favorite-foods .card ,.cartItems #all-cart-items .card{
+  width: clamp(150px,15vw,300px);
+  height: clamp(200px,20vw,400px);
+  background-color: #fff;
+  margin: clamp(10px,3vw,30px) 0;
+  flex-shrink: 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding:15px;
+  cursor: pointer;
+}
+.favorites .all-favorite-foods .card .fa-heart ,.cartItems #all-cart-items .card .fa-heart{
+  color: var(--main-color);
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+}
+.remove-item{
+  color: var(--main-color);
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+  font-weight: 900;
+}
+.favorites .all-favorite-foods .card img , .cartItems #all-cart-items .card img{
+  width: 100%;
+  height: 55%;
+  object-fit: contain;
+  object-position: center;
+  margin-bottom: 10px;
+  
+}
+.favorites .all-favorite-foods .card .food-name, .cartItems #all-cart-items .card .food-name{
+  font-size: large;
+  text-transform: capitalize;
+}
+.favorites .all-favorite-foods .card .food-type, .cartItems #all-cart-items .card .food-type{
+  color: #414141;
+  font-size: small;
+  margin: 0.5vw 0 0.8vw 0;
+} 
+.favorites .all-favorite-foods .card .price, .cartItems #all-cart-items .card .price{
+  justify-self: self-end;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.favorites .all-favorite-foods .card .price .fa-square-plus, .cartItems #all-cart-items .card .price .fa-square-plus{
+  font-size: x-large;
+  color: var(--main-color); 
+}
+
+/* Cart's Styles */
+.cart{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  z-index: 6;
+  background-color: #f5f5f5;
+}
+.cart .close-cart{
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  padding: 8px;
+  font-size: larger;
+  background-color: #fff;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+}
+.cart img{
+  width: 80%;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+}
+.cart .content-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3vw;
+}
+.cart .content-container .discrip{
+  margin: 10px 0;
+}
+.cart .content-container .discrip span{
+  font-weight: 800;
+}
+.cart .content-container .discrip .titles{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: x-large;
+}
+.cart .content-container .discrip .titles div {
+  display: flex;
+  flex-direction: column;
+}
+.cart .content-container .discrip .titles div #type{
+  font-size: medium;
+  color: var(--main-color);
+}
+.cart .content-container .discrip .titles #price{
+  color: var(--main-color);
+}
+.cart .content-container .discrip p{
+  max-width: calc(85% + 5px);
+}
+.cart .content-container .buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.cart .content-container .buttons .number{
+  min-width: 150px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart .content-container .buttons .number button{
+  font-size: large;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  justify-items: center;
+  color: #fff;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.cart .content-container .buttons #addToCart{
+  min-width: 150px;
+  padding: 15px;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsiving cart  */
+@media (max-width:950px){
+  .cart{
+    grid-template-columns: 1fr;
+    grid-template-rows: 6fr 4fr;
+  }
+  .cart img {
+    align-self: end;
+  }
+
+
+}
+
+
+/* the styles that i dont know where are they blong  */
+.count{
+  justify-self: end;
+  color: var(--main-color);
+}

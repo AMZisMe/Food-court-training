@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Arvin Food</title>
+  </head>
+  <body>
+    <!-- On Desktop Navbar -->
+
+    <section class="desktop-nav-container">
+      <i id="opener" class="fa-solid fa-arrow-right open opened-navbar" ></i>
+
+      <nav id="desktop-nav" class="closed-navbar">
+        <a href=""><i class="fa-solid fa-house"></i> Home</a>
+        <a class="go-to-fav-page"><i class="far fa-heart"></i> Favorites</a>
+        <a class="open-cart"><i class="fa fa-cart-shopping "></i> Cart</a>
+        <a href=""><i class="fa-regular fa-user"></i> Profile</a>
+
+        <i id="closer" class="fa-solid fa-arrow-left close"></i>
+      </nav>
+    </section>
+
+    <!-- On Mobile Navbar -->
+    <section class="mobile-navbar-container">
+      <nav class="mobile-navbar">
+        <a href=""><i class="fa-solid fa-house"></i> </a>
+        <a class="go-to-fav-page"><i class="far fa-heart"></i> </a>
+        <a class="open-cart"><i class="fa fa-cart-shopping "></i> </a>
+        <a href=""><i class="fa-regular fa-user"></i> </a>
+      </nav>
+    </section>
+
+    <header>
+      <div class="head">
+        <div class="profile">
+          <img src="../images/img200.gif" alt="" />
+          <span id="user-name">Not logged</span>
+        </div>
+
+        <h1><span>Choose</span> Your Favorite <span>Food</span></h1>
+
+        <a href=""
+          ><i class="fa-solid fa-arrow-right-from-bracket login"></i
+        ></a>
+      </div>
+
+      <form action="">
+        <i class="search-icon fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Search..." />
+      </form>
+
+      <section class="food-types">
+        <span id="all-foods-filter" class="filter selected-filter">All</span>
+        <span class="filter">Pizza</span>
+        <span class="filter">Burger</span>
+        <span class="filter">Sandwich</span>
+        <span class="filter">Drink</span>
+      </section>
+    </header>
+
+    <!-- Main contents  -->
+    <main>
+      <div class="popular-foods">
+        <div class="title">
+          <span>popular foods:</span>
+          <a href="../See all pages/popularFoods.html"
+            ><span id="see-all">See All</span></a
+          >
+        </div>
+
+        <div id="popular-food-cards" class="food-cards"></div>
+      </div>
+
+      <div class="nearest-foods">
+        <div class="title">
+          <span>nearest foods:</span>
+          <a href="../See all pages/nearesrFoods.html"
+            ><span id="see-all">See All</span></a
+          >
+        </div>
+
+        <div id="nearest-food-cards" class="food-cards"></div>
+      </div>
+    </main>
+
+    <!-- Footer  -->
+    <footer>
+      <ul>
+        <a href=""><i class="fa-brands fa-telegram"></i> Telegram</a>
+        <a href=""><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href=""><i class="fa-brands fa-twitter"></i> Twitter</a>
+        <a href=""><i class="fa-brands fa-facebook"></i> Facebook</a>
+      </ul>
+      <ul>
+        <a href=""><i class="fas fa-user-alt"></i> About Us</a>
+        <a href=""><i class="fa fa-phone"></i> Contact Us</a>
+        <a href=""
+          ><i class="fa-solid fa-arrow-right-from-bracket login"></i> Login</a
+        >
+        <p href="">
+          <i class="fa fa-map-marker"></i> Our Address: Iran,Felan city, Baman
+          street, Arvin Food.
+        </p>
+      </ul>
+    </footer>
+
+    <!-- Favorite Foods section  -->
+    <section class="favorites">
+      <i class="fa-solid fa-x x-icon" id="close-favorites-page"></i>
+      <h1>All nearest <span>foods</span></h1>
+
+      <div class="all-favorite-foods"></div>
+    </section>
+
+    <!-- Cart section  -->
+    <section class="cart">
+        <i class="fa-solid fa-arrow-left close-cart"></i>
+
+      <img src="../images/1 (6).png" alt="" id="cart-img" />
+
+    <div class="content-container">
+      
+      <div class="discrip">
+        <span>Informations:</span>
+        <div class="titles">
+          <div>
+          <span id="name">
+            Cheese burger
+          </span>
+          <span id="type">Burger</span>
+        </div>
+  
+          <span id="">Price: <strong id="price">250</strong><span style="color: #9e090f;"> Toman</span></span>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex sint,
+          iusto delectus placeat corporis recusandae neque cupiditate aperiam
+          ad, eius ipsa. Atque vero possimus dolorum illo accusantium recusandae
+          commodi deserunt.
+        </p>
+      </div>
+
+      <div class="buttons">
+        <div class="number">
+          <button id="decreace">-</button>
+          <span id="number-of-meal">0</span>
+          <button id="increace">+</button>
+        </div>
+
+        <button id="addToCart">Add to cart</button>
+      </div>
+    </div>
+    </section>
+
+    <section class="cartItems">
+      <i class="fa-solid fa-x x-icon close-cart-section" ></i>
+      <h1>Your <span>cart</span></h1>
+      <div id="all-cart-items">
+        
+      </div>
+      <h1>Total prices: <span id="total-price">0</span></h1>
+      <p style="justify-self: center;">double click on an item to remove it</p>
+    </section>
+
+
+    <script
+      src="https://kit.fontawesome.com/3afacf2a5d.js"
+      async
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" async></script>
+    <script src="../databace.js" async></script>
+  </body>
+</html>
